@@ -25,7 +25,7 @@ public class FlightService {
     }
 
 
-    public FlightService getInstance() {
+    public static FlightService getInstance() {
         return INSTANCE;
     }
 }
