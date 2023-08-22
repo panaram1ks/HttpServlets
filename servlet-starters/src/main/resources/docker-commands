@@ -1,0 +1,1 @@
+docker run --name basic-postgres --rm -e POSTGRES_USER=parom -e POSTGRES_PASSWORD=panaram1ks -e PGDATA=/var/lib/postgresql/data/pgdata -v /home/parom/IdeaProjects/HttpServlets/postgresData:/var/lib/postgresql/data -p 5432:5432 -it postgres:14.1-alpine
