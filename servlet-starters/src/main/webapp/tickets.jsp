@@ -1,15 +1,16 @@
 <%@ page import="com.dmdev.application.service.TicketService" %>
 <%@ page import="com.dmdev.application.dto.TicketDto" %>
 <%@ page import="java.util.List" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+
+<%--<%@ taglib prefix="c" uri="http://mycompany.com" %>--%>
+<%@ include file="index.html" %>
 
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-
-
 <h1>Купленные билеты:</h1>
 <ul>
     <%--    Scriplet example    --%>
@@ -23,8 +24,8 @@
 </ul>
 </body>
 </html>
-
-<%! public void jspInit(){
+<%--    Declaration example    --%>
+<%! public void jspInit() {
     System.out.println("Hello world 999 !");
 }
 %>
