@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <body>
+
+<img width="100" height="150" src="${pageContext.request.contextPath}/images/users/docker19comands.jpeg"
+     alt="user image">
+
 <form action="/registration" method="post" enctype="multipart/form-data">
     <lable for="name">Name:
         <input type="text" name="name" id="name">
