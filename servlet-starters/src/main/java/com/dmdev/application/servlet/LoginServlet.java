@@ -3,6 +3,7 @@ package com.dmdev.application.servlet;
 import com.dmdev.application.dto.UserDto;
 import com.dmdev.application.service.UserService;
 import com.dmdev.application.util.JspHelper;
+import com.dmdev.application.util.UrlPath;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,7 +13,7 @@ import lombok.SneakyThrows;
 
 import java.io.IOException;
 
-@WebServlet("/login")
+@WebServlet(UrlPath.LOGIN)
 public class LoginServlet extends HttpServlet {
 
     private final UserService userService = UserService.getInstance();
