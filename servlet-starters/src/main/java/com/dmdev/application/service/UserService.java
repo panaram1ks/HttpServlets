@@ -1,4 +1,4 @@
-package com.dmdev.application.servlet;
+package com.dmdev.application.service;
 
 import com.dmdev.application.dao.UserDao;
 import com.dmdev.application.dto.CreateUserDto;
@@ -9,6 +9,7 @@ import com.dmdev.application.validator.CreateUserValidator;
 import com.dmdev.application.validator.ValidationResult;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import lombok.SneakyThrows;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class UserService {
@@ -16,8 +17,10 @@ public class UserService {
     private final CreateUserValidator createUserValidator = CreateUserValidator.getInstance();
     private final UserDao userDao = UserDao.getInstance();
     private final CreateUserMapper createUserMapper = CreateUserMapper.getInstance();
+    private final ImageService imageService = ImageService.getInstance();
 
 
+    @SneakyThrows
     public Integer create(CreateUserDto userDto) {
         // validation
         ValidationResult validationResult = createUserValidator.isValid(userDto);
@@ -27,6 +30,7 @@ public class UserService {
         // map
         User user = createUserMapper.mapFrom(userDto);
         //userDao.save
+        imageService.upload(user.getImage(), userDto.getImage().getInputStream());
         userDao.save(user);
         return user.getId();
     }

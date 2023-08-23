@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/registration" method="post">
+<form action="/registration" method="post" enctype="multipart/form-data">
     <lable for="name">Name:
         <input type="text" name="name" id="name">
     </lable>
@@ -30,6 +30,9 @@
     <c:forEach var="gender" items="${requestScope.genders}">
         <input type="radio" name="gender" value="${gender}">${gender}<br>
     </c:forEach>
+    <lable for="image">IMG:
+        <input type="file" name="image" id="image" required>
+    </lable>
     <button type="submit">send</button>
     <c:if test="${not empty requestScope.errors}">
         <div style="color: red">
