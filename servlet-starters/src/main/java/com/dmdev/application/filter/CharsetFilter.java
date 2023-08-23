@@ -11,13 +11,13 @@ import java.nio.charset.StandardCharsets;
 /**
  * WE can bondles servlet's url, and Servlet's name
  */
-//@WebFilter("/*")
-@WebFilter(servletNames = {"RegistrationServlet"},
-        initParams = {
-                @WebInitParam(name = "param1", value = "paramValue")
-        },
-        dispatcherTypes = DispatcherType.REQUEST
-)
+@WebFilter("/*")
+//@WebFilter(servletNames = {"RegistrationServlet"},
+//        initParams = {
+//                @WebInitParam(name = "param1", value = "paramValue")
+//        },
+//        dispatcherTypes = DispatcherType.REQUEST
+//)
 public class CharsetFilter implements Filter {
 
     @Override
