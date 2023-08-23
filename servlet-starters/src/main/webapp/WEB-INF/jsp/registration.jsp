@@ -6,6 +6,8 @@
 </head>
 <body>
 
+<%@ include file="header.jsp" %>
+
 <img width="100" height="150" src="${pageContext.request.contextPath}/images/users/docker19comands.jpeg"
      alt="user image">
 
