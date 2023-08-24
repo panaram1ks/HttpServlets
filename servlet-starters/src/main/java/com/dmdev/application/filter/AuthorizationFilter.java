@@ -1,7 +1,6 @@
 package com.dmdev.application.filter;
 
 import com.dmdev.application.dto.UserDto;
-import com.dmdev.application.util.JspHelper;
 import com.dmdev.application.util.UrlPath;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
@@ -14,7 +13,7 @@ import java.util.Set;
 @WebFilter("/*")
 public class AuthorizationFilter implements Filter {
 
-    public static final Set<String> PUBLIC_PATH = Set.of(UrlPath.LOGIN, UrlPath.REGISTRATION, UrlPath.IMAGES);
+    public static final Set<String> PUBLIC_PATH = Set.of(UrlPath.LOGIN, UrlPath.REGISTRATION, UrlPath.IMAGES, UrlPath.LOCALE);
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
